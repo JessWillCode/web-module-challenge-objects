@@ -23,8 +23,6 @@ function createMenuItem(name, price, category){
   }
 }
 
-console.log(createMenuItem('tacos', 8, 'Lunch'))
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
 Test your createMenuItems function by doing the following:
@@ -35,7 +33,9 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
-
+console.log(createMenuItem('Pizza', 5, 'Lunch'));
+console.log(createMenuItem('Egg Croissant', 4, 'Breakfast'));
+console.log(createMenuItem('Steak', 10, 'Dinner'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -53,10 +53,16 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount(string){
+    if(string === 'teacher' || string === 'student'){
+      return (this.price - (this.price*0.25));
+    } else {
+      return (this.price - (this.price*0.10));
+    }
+  }
 }
 
-
+burger.discount('teacher');
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -75,7 +81,9 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
+// for (let feedback in reviews){
+//   console.log(reviews.feedback[5]);
+// }
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -97,9 +105,26 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+
+
+function addReview(name, rating, feedback){
+  const array = [];
+  array.push();
+  return {
+  name, 
+  rating,
+  review: feedback
 }
+}
+console.log(addReview('Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!'));
+
+/*function createMenuItem(name, price, category){
+  return {
+    name, 
+    price,
+    category
+  }
+}*/
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
